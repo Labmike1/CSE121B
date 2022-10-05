@@ -105,15 +105,36 @@ document.querySelector("#year").textContent = hi;
 /* ARRAY METHODS */
 
 // Step 1: Declare and instantiate an array variable to hold the numbers 1 through 25
+const arraynumbers = Array(25).fill(1).map((n, i) => n + i)
+console.log(arraynumbers)
 
 // Step 2: Assign the value of the array variable to the HTML element with an ID of "array"
 
+document.getElementById("array").textContent = arraynumbers;
+
 // Step 3: Use the filter array method to find all of the odd numbers of the array variable and assign the reult to the HTML element with an ID of "odds" ( hint: % (modulus operartor) )
+
+document.getElementById("odds").textContent = arraynumbers.filter(number => {return number % 2 !== 0});
 
 // Step 4: Use the filter array method to find all of the even numbers of the array variable and assign the result to the HTML element with an ID of "evens"
 
+document.getElementById("evens").textContent = arraynumbers.filter(number => {return number % 2 == 0});
+
 // Step 5: Use the reduce array method to sum the array variable elements and assign the result to the HTML element with an ID of "sumOfArray"
+
+const initialValue = 0;
+document.getElementById("sumOfArray").textContent = arraynumbers.reduce( (previousValue, currentValue) => previousValue + currentValue,initialValue);
+console.log(arraynumbers);
 
 // Step 6: Use the map array method to multiple each element in the array variable by 2 and assign the result to the HTML element with an ID of "multiplied"
 
+document.getElementById("multiplied").textContent = arraynumbers.map(x => x * 2);
+ 
+
 // Step 7: Use the map and reduce array methods to sum the array elements after multiplying each element by two.  Assign the result to the HTML element with an ID of "sumOfMultiplied"
+
+array_multiply = arraynumbers.map(x => x * 2);
+
+const initialValue_ = 0;
+document.getElementById("sumOfMultiplied").textContent = array_multiply.reduce( (previousValue, currentValue) => previousValue + currentValue,initialValue);
+console.log(arraynumbers);
